@@ -5,8 +5,8 @@ from app import APP
 from models import db
 
 
-migrate = Migrate(app, db)
-manager = Manager(app)
+migrate = Migrate(APP, db)
+manager = Manager(APP)
 
 manager.add_command('db', MigrateCommand)
 
