@@ -218,6 +218,6 @@ def create_app(test_config=None):
 APP = create_app()
 
 if __name__ == '__main__':
-  APP.run()
+  APP.run({}
 
 
