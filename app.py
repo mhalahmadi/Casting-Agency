@@ -39,6 +39,7 @@ def create_app(test_config=None):
   
 
   @app.route('/actors', methods=['GET'])
+  @requires_auth('get:actors')
   def get_actors(payload):      
     #actors = Actors.query.all()
     actors = Actors.query.order_by(Actors.id).all()
@@ -114,6 +115,7 @@ def create_app(test_config=None):
     })
 
   @app.route('/movies')
+  @requires_auth('get:movies')
   def get_movies(payload):
     #movies = Movies.query.all()
     movies = Movies.query.order_by(Movies.id).all()
@@ -121,7 +123,6 @@ def create_app(test_config=None):
 
     if len(formated_movie) == 0:
       abort(404)
-    
 
     return jsonify({
       'success': True,
