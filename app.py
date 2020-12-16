@@ -31,7 +31,6 @@ def create_app(test_config=None):
   
 
   @app.route('/actors', methods=['GET'])
-  @requires_auth('get:actors')
   def get_actors(payload):      
     #actors = Actors.query.all()
     actors = Actors.query.order_by(Actors.id).all()
