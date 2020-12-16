@@ -209,9 +209,5 @@ def create_app(test_config=None):
 APP = create_app()
 
 if __name__ == '__main__':
-    APP.run(debug=True)
-<<<<<<< HEAD
-    (host='0.0.0.0', port=8080, debug=True)
-=======
-    #(host='0.0.0.0', port=8080, debug=True)
->>>>>>> 382d98725a8e2b2e47f68f36474d8310435d1ca0
+    APP.run(host='0.0.0.0', port=8080, debug=True)
+
