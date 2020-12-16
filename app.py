@@ -28,6 +28,14 @@ def create_app(test_config=None):
     current = formated_page[start:end]
 
     return current
+
+  
+  @app.route('/')
+  def index():
+    return jsonify({
+      'success': True,
+      'application': 'Casting Agency'
+    })
   
 
   @app.route('/actors', methods=['GET'])
@@ -210,5 +218,5 @@ app = create_app()
 
 if __name__ == '__main__':
     #port = int(os.environ.get("PORT", 5000))
-  app.run(debug=True)
+  app.run(host='0.0.0.0', port=8080, debug=True)
 
