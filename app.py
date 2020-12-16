@@ -218,5 +218,5 @@ APP = create_app()
 
 if __name__ == '__main__':
     #port = int(os.environ.get("PORT", 5000))
-  APP.run(host='0.0.0.0', port=8080, debug=True)
+  APP.run()
 
