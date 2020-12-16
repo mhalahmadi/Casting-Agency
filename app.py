@@ -31,7 +31,6 @@ def create_app(test_config=None):
   
 
   @app.route('/actors', methods=['GET'])
-  @requires_auth('get:actors')
   def get_actors(payload):      
     #actors = Actors.query.all()
     actors = Actors.query.order_by(Actors.id).all()
@@ -107,7 +106,6 @@ def create_app(test_config=None):
     })
 
   @app.route('/movies')
-  @requires_auth('get:movies')
   def get_movies(payload):
     #movies = Movies.query.all()
     movies = Movies.query.order_by(Movies.id).all()
@@ -212,4 +210,8 @@ APP = create_app()
 
 if __name__ == '__main__':
     APP.run(debug=True)
+<<<<<<< HEAD
     (host='0.0.0.0', port=8080, debug=True)
+=======
+    #(host='0.0.0.0', port=8080, debug=True)
+>>>>>>> 382d98725a8e2b2e47f68f36474d8310435d1ca0
