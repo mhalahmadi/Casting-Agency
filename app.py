@@ -38,6 +38,7 @@ def create_app(test_config=None):
     })
 
 
+# puplic view
   @app.route('/actore')
   def get_actore():
     actore = Actors.query.all()
