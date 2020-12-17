@@ -36,6 +36,16 @@ def create_app(test_config=None):
       'success': True,
       'application': 'Casting Agency'
     })
+
+
+  @app.route('/actore')
+  def get_actore():
+    actore = Actors.query.all()
+    return jsonify({
+      'success': True,
+      'actore': pagination(request, actore),
+      'total_actore':len(Actors.query.all())
+    })
   
 
   @app.route('/actors', methods=['GET'])
