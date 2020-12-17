@@ -6,8 +6,9 @@ from flask import Flask
 import datetime
 import json
 
-database_name = 'casting_agency'
-database_path = 'postgresql://postgres@localhost:5432/casting_agency'
+#database_name = 'casting_agency'
+database_path = os.getenv('DATABASE_URL')
+#database_path = 'postgresql://postgres@localhost:5432/casting_agency'
 
 db = SQLAlchemy()
 
