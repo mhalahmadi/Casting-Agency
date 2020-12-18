@@ -26,12 +26,7 @@ The APP will be run locally at http://127.0.0.:5000/
 
 Authentication:
 This version of applocation dose  require authentication or API keys
-castingassistant120@gmail.com
-Ca12345678
-castingdirector28@gmail.com
-Cd12345678
-castingexecutive70@gmail.com
-Ca12345678
+
 
 response codes
 

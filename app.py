@@ -13,8 +13,14 @@ def create_app(test_config=None):
 
   @app.after_request
   def after_request(response):
-    response.headers.add('Access-Control-Allow-Headers', 'Content-Type, Authorization, true')
-    response.headers.add('Access_Control-Allow-Headers', 'GET, POST, DELETE, PATCH, OPTIONS')
+    response.headers.add(
+                        'Access-Control-Allow-Headers',
+                        'Content-Type, Authorization, true'
+                        )
+    response.headers.add(
+                        'Access_Control-Allow-Headers',
+                        'GET, POST, DELETE, PATCH, OPTIONS'
+                        )
     return response
 
   QUESTIONS_PER_PAGE =10
@@ -37,23 +43,11 @@ def create_app(test_config=None):
       'application': 'Casting Agency'
     })
 
-
-# puplic view
-  @app.route('/actore')
-  def get_actore():
-    actore = Actors.query.all()
-    return jsonify({
-      'success': True,
-      'actore': pagination(request, actore),
-      'total_actore':len(Actors.query.all())
-    })
-  
-
   @app.route('/actors', methods=['GET'])
   @requires_auth('get:actors')
   def get_actors(payload):      
-    #actors = Actors.query.all()
-    actors = Actors.query.order_by(Actors.id).all()
+    actors = Actors.query.all()
+    #actors = Actors.query.order_by(Actors.id).all()
     formated_actor = pagination(request, actors)
     #formated_actor = [actor.formate() for actor in actors]
 
@@ -116,7 +110,15 @@ def create_app(test_config=None):
     create_age = body.get('age')
     create_gender = body.get('gender')
     
-    actors =Actors(name = create_name, age = create_age, gender = create_gender)
+    actors =Actors(
+                  name = create_name,
+                  age = create_age,
+                  gender = create_gender
+                  )
+    
+    if create_name =='' or create_age == '' or create_gender == '':
+      abort(404)
+
     actors.insert()
     actor = [Actors.query.get(actors.id).format()]
 
@@ -128,7 +130,7 @@ def create_app(test_config=None):
   @app.route('/movies')
   @requires_auth('get:movies')
   def get_movies(payload):
-    #movies = Movies.query.all()
+    
     movies = Movies.query.order_by(Movies.id).all()
     formated_movie = pagination(request, movies)
 
@@ -149,7 +151,14 @@ def create_app(test_config=None):
     create_title = body.get('title')
     create_release_date = body.get('relase_date')
 
-    movies = Movies(title = create_title, relase_date = create_release_date)
+    movies = Movies(
+                    title = create_title,
+                    relase_date = create_release_date
+                    )
+
+    if create_title == '' or create_release_date == '':
+      abort(404)
+
     movies.insert()
 
     movie = [Movies.query.get(movies.id).format()]
@@ -165,10 +174,14 @@ def create_app(test_config=None):
     try:
       movie = Movies.query.filter(Movies.id == movie_id).one_or_none()
       body = request.get_json(force=True)
-      movie.title = body.get('title', None)
-      movie.relase_date = body.get('relase_date', None)
+      title = body.get('title', None)
+      relase_date = body.get('relase_date', None)
 
-      if body is None:
+      movie.title = title
+      movie.relase_data = relase_date
+
+
+      if title == '' or relase_date == '':
         abort(404)
 
       movie.update()

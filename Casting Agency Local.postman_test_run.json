@@ -1,0 +1,546 @@
+{
+	"id": "4f8bb1d2-ea52-4891-a9de-5eb74f28f161",
+	"name": "Casting Agency Local",
+	"timestamp": "2020-12-18T13:00:20.190Z",
+	"collection_id": "d5b036bb-2d3e-4430-8e30-1fe5afb301dd",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 0,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "55ad890f-04e5-40d0-a5ab-8af8150a5c9e",
+			"name": "Get Actores",
+			"url": "http://127.0.0.1:5000/actors",
+			"time": 1055,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				1055
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "cb6e8413-f59e-435d-aa91-6fd24d75a9bd",
+			"name": "Create Actores",
+			"url": "http://127.0.0.1:5000//actors/create",
+			"time": 682,
+			"responseCode": {
+				"code": 401,
+				"name": "UNAUTHORIZED"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				682
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "48936c7a-7330-4612-b203-eb4338df7b71",
+			"name": "Update Actore",
+			"url": "http://127.0.0.1:5000/actors/1",
+			"time": 677,
+			"responseCode": {
+				"code": 401,
+				"name": "UNAUTHORIZED"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				677
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "b6a34c5c-3d51-4965-940a-e07019ea97c8",
+			"name": "Delete Actores",
+			"url": "http://127.0.0.1:5000/actors/8",
+			"time": 467,
+			"responseCode": {
+				"code": 401,
+				"name": "UNAUTHORIZED"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				467
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "e8d9d22c-5f49-4ae4-8b1b-8759b7b1ebd4",
+			"name": "Get Movies",
+			"url": "http://127.0.0.1:5000/movies",
+			"time": 416,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				416
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "3aca8b19-1fd8-4440-b470-d6e63d3169c6",
+			"name": "Create Movies",
+			"url": "http://127.0.0.1:5000//movies/create",
+			"time": 454,
+			"responseCode": {
+				"code": 401,
+				"name": "UNAUTHORIZED"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				454
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "1cd7a9d6-37df-450e-994a-fc06b0bc507f",
+			"name": "Update Movies",
+			"url": "http://127.0.0.1:5000/movies/2",
+			"time": 438,
+			"responseCode": {
+				"code": 401,
+				"name": "UNAUTHORIZED"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				438
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "f18339fc-2c8c-4f73-9754-69f9479dcc21",
+			"name": "Delete Movies",
+			"url": "http://127.0.0.1:5000/movies/1",
+			"time": 456,
+			"responseCode": {
+				"code": 401,
+				"name": "UNAUTHORIZED"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				456
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "08e00f28-65e0-471a-a23b-744d62a2a34b",
+			"name": "Get Actores",
+			"url": "http://127.0.0.1:5000/actors",
+			"time": 470,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				470
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "46d4e5e7-b34d-489d-ab35-faee4c609204",
+			"name": "Update Actore",
+			"url": "http://127.0.0.1:5000/actors/1",
+			"time": 587,
+			"responseCode": {
+				"code": 500,
+				"name": "INTERNAL SERVER ERROR"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				587
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "b416326a-62ef-4e9d-9811-07588deefd0f",
+			"name": "Create Actores",
+			"url": "http://127.0.0.1:5000/actors/create",
+			"time": 483,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				483
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "326fcadb-68f3-42e8-9e88-828f63f50b3a",
+			"name": "Delete Actores",
+			"url": "http://127.0.0.1:5000/actors/8",
+			"time": 489,
+			"responseCode": {
+				"code": 422,
+				"name": "UNPROCESSABLE ENTITY"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				489
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "cda554ac-722c-48f4-8237-5fee11e80827",
+			"name": "Get Movies",
+			"url": "http://127.0.0.1:5000/movies",
+			"time": 25,
+			"responseCode": {
+				"code": 401,
+				"name": "UNAUTHORIZED"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				25
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "77a98324-20c6-4a87-8c06-e67163d5bc25",
+			"name": "Create Movies",
+			"url": "http://127.0.0.1:5000/movies/create",
+			"time": 427,
+			"responseCode": {
+				"code": 401,
+				"name": "UNAUTHORIZED"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				427
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "13b2d1ca-2fe6-44e2-94e4-f883181469dc",
+			"name": "Delete Movies",
+			"url": "http://127.0.0.1:5000/movies/1",
+			"time": 421,
+			"responseCode": {
+				"code": 401,
+				"name": "UNAUTHORIZED"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				421
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "3d7d2762-c376-4d3d-a6ea-f51e0c983f57",
+			"name": "Update Movies",
+			"url": "http://127.0.0.1:5000/movies/1",
+			"time": 486,
+			"responseCode": {
+				"code": 401,
+				"name": "UNAUTHORIZED"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				486
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "1aba241c-8e11-4c71-b03a-538535bf7770",
+			"name": "Get Actores",
+			"url": "http://127.0.0.1:5000/actors",
+			"time": 460,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				460
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "745493f2-360f-4c43-849f-a26843a5cc6a",
+			"name": "Update Actore",
+			"url": "http://127.0.0.1:5000/actors/3",
+			"time": 531,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				531
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "6c2812e8-1723-42b0-b610-560c2cf5fca2",
+			"name": "Create Actores",
+			"url": "http://127.0.0.1:5000/actors/create",
+			"time": 497,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				497
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "7d8576e6-9f72-4495-b25e-27a06a0e21b1",
+			"name": "Delete Actores",
+			"url": "http://127.0.0.1:5000/actors/1",
+			"time": 523,
+			"responseCode": {
+				"code": 422,
+				"name": "UNPROCESSABLE ENTITY"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				523
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "98f77096-64e2-4125-a741-efb7c70ec346",
+			"name": "Get Movies",
+			"url": "http://127.0.0.1:5000/movies",
+			"time": 470,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				470
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "afcac01b-838e-4baa-95f6-f35caca804c3",
+			"name": "Create Movies",
+			"url": "http://127.0.0.1:5000/movies/create",
+			"time": 556,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				556
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "dc4cdcbf-6dd2-4331-a61f-f9319756fb0b",
+			"name": "Delete Movies",
+			"url": "http://127.0.0.1:5000/movies/3",
+			"time": 416,
+			"responseCode": {
+				"code": 422,
+				"name": "UNPROCESSABLE ENTITY"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				416
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "f252ee2f-2a15-4fb2-a50c-507a7c562225",
+			"name": "Update Movies",
+			"url": "http://127.0.0.1:5000/movies/4",
+			"time": 474,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				474
+			],
+			"allTests": [
+				{}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 11960,
+	"collection": {
+		"requests": [
+			{
+				"id": "55ad890f-04e5-40d0-a5ab-8af8150a5c9e",
+				"method": "GET"
+			},
+			{
+				"id": "cb6e8413-f59e-435d-aa91-6fd24d75a9bd",
+				"method": "POST"
+			},
+			{
+				"id": "48936c7a-7330-4612-b203-eb4338df7b71",
+				"method": "PATCH"
+			},
+			{
+				"id": "b6a34c5c-3d51-4965-940a-e07019ea97c8",
+				"method": "DELETE"
+			},
+			{
+				"id": "e8d9d22c-5f49-4ae4-8b1b-8759b7b1ebd4",
+				"method": "GET"
+			},
+			{
+				"id": "3aca8b19-1fd8-4440-b470-d6e63d3169c6",
+				"method": "POST"
+			},
+			{
+				"id": "1cd7a9d6-37df-450e-994a-fc06b0bc507f",
+				"method": "PATCH"
+			},
+			{
+				"id": "f18339fc-2c8c-4f73-9754-69f9479dcc21",
+				"method": "DELETE"
+			},
+			{
+				"id": "08e00f28-65e0-471a-a23b-744d62a2a34b",
+				"method": "GET"
+			},
+			{
+				"id": "46d4e5e7-b34d-489d-ab35-faee4c609204",
+				"method": "PATCH"
+			},
+			{
+				"id": "b416326a-62ef-4e9d-9811-07588deefd0f",
+				"method": "POST"
+			},
+			{
+				"id": "326fcadb-68f3-42e8-9e88-828f63f50b3a",
+				"method": "DELETE"
+			},
+			{
+				"id": "cda554ac-722c-48f4-8237-5fee11e80827",
+				"method": "GET"
+			},
+			{
+				"id": "77a98324-20c6-4a87-8c06-e67163d5bc25",
+				"method": "POST"
+			},
+			{
+				"id": "13b2d1ca-2fe6-44e2-94e4-f883181469dc",
+				"method": "DELETE"
+			},
+			{
+				"id": "3d7d2762-c376-4d3d-a6ea-f51e0c983f57",
+				"method": "PATCH"
+			},
+			{
+				"id": "1aba241c-8e11-4c71-b03a-538535bf7770",
+				"method": "GET"
+			},
+			{
+				"id": "745493f2-360f-4c43-849f-a26843a5cc6a",
+				"method": "PATCH"
+			},
+			{
+				"id": "6c2812e8-1723-42b0-b610-560c2cf5fca2",
+				"method": "POST"
+			},
+			{
+				"id": "7d8576e6-9f72-4495-b25e-27a06a0e21b1",
+				"method": "DELETE"
+			},
+			{
+				"id": "98f77096-64e2-4125-a741-efb7c70ec346",
+				"method": "GET"
+			},
+			{
+				"id": "afcac01b-838e-4baa-95f6-f35caca804c3",
+				"method": "POST"
+			},
+			{
+				"id": "dc4cdcbf-6dd2-4331-a61f-f9319756fb0b",
+				"method": "DELETE"
+			},
+			{
+				"id": "f252ee2f-2a15-4fb2-a50c-507a7c562225",
+				"method": "PATCH"
+			}
+		]
+	}
+}
