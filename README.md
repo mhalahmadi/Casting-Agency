@@ -207,15 +207,15 @@ the API will return error as
 422:Uunprocessable
 404: Not Found
 
-Testing:
+Testing: 
 Restore database by using command
 
-move to PostgreSQL file folder
+move to PostgreSQL file folder 
 cd "C:\ProgramFiles\PostgreSQL\9.6\bin"
 
-Enter Command for restore
+Enter Command for restore 
 ./psql.exe -U postgres -d castibg_agency_test -f D:\Backup\casting_agency_test.sql
 
-Auther
+Auther: 
 Mona Alahmadi
 
