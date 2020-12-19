@@ -3,6 +3,9 @@ Introduction:
 The web is Casting Agency that will let user to retrive information about Actore and Movie,
 and some user special have a primmesion to add , update and delate actore and Movie
 
+on this project it challenge me that i put all the knowledge that i grant from the course of Full Stack Developer by udacity 
+I found out that I get good experience with the course , I practice alot and that why i can make a backend programs eaiser then before
+
 Getting started:
 
 pre-requirments and local development:
@@ -26,9 +29,10 @@ and in internet on https://castingagen88.herokuapp.com
 
 Authentication:
 This version of application dose require authentication
-three type of authintaction
 
-1-Castong assistant
+Three type of authintaction
+
+1-Casting assistant
 -get/Actore
 -Get/Movie
 
@@ -51,14 +55,54 @@ three type of authintaction
 -Delete/Movie
 
 
-response codes
+If token is expired please use as below
 
-Endpoint:
+log-in:
+dev-mirai.us.auth0.com/authorize?audience=CastingAgency&
+response_type=token&
+client_id=qN6cyNfqsPreqoQWhvYDx6AcCtigXMv6&
+redirect_uri=http://127.0.0.1:5000/results
+
+Log-out
+https://dev-mirai.us.auth0.com/v2/logout?client_id=U8XDu4EKfy8wihkNq35EWTZC2UOphmTT
+
+Account:
+1-Casting assistant
+ Email: castingassistant120@gmail.com
+ Password: Ca12345678
+2-Casting diractore
+ Email: castingdirector28@gmail.com
+ Password: Cd12345678
+3-Casting Executive
+ Email: castingexecutive70@gmail.com
+ Password: Ca12345678
+
+In order to use the token in code
+   add token in setup_example.sh
+   
+   run in GIT BASH
+   
+   source setup_exapmle.sh
+
+
+Testing
+testing by postman
+import 
+ Casting Agency Local.postman_collection
+ 
+
+Endpoint:3-Casting Executive
 GET/Actor
 return all the actors information
 
 postman GET https://castingagen88.herokuapp.com/actors
 
+Permissions:
+ Casting assistant
+ Casting diractore
+ Casting Executive
+
+Result:
 {
     "actore": [
         {
@@ -78,6 +122,11 @@ update actor information based on ID
 
 postman PATCH https://castingagen88.herokuapp.com/actors/1
 
+Permissions:
+ Casting diractore
+ Casting Executive
+ 
+ Result:
 {
     "actor": [
         {
@@ -97,6 +146,11 @@ delete actor based on ID
 
 postman DELETE https://castingagen88.herokuapp.com/actors/1
 
+Permissions:
+ Casting diractore
+ Casting Executive
+ 
+Result:
 {
     "delete": 1,
     "success": true
@@ -107,6 +161,10 @@ add new actore in the list
 
 postman POST  https://castingagen88.herokuapp.com/artors/create
 
+Permissions:
+ Casting diractore
+ Casting Executive
+ 
 Result:
 {
     "actors": [
@@ -126,6 +184,12 @@ return all movies
 
 postman GET https://castingagen88.herokuapp.com/movies
 
+Permissions:
+ Casting Asistint
+ Casting Diractore
+ Casting Executive
+ 
+Result:
 {
     "movie": [
         {
@@ -143,6 +207,10 @@ update movie information bassed on ID
 
 Postman PATCH https://castingagen88.herokuapp.com/movies/4
 
+Permissions:
+ Casting Executive
+ 
+Result:
 {
     "movie": [
         {
@@ -161,7 +229,10 @@ Delete movie bassed on ID
 
 Postman DELETE https://castingagen88.herokuapp.com/movies/1
 
-
+Permissions:
+ Casting Executive
+ 
+Result:
 {
     "delete": 1,
     "success": true
@@ -173,6 +244,10 @@ add new movie in the list
 
 Postman POST https://castingagen88.herokuapp.com/movies/create
 
+Permissions:
+ Casting Executive
+ 
+Result:
 {
     "movie": [
         {
@@ -183,8 +258,6 @@ Postman POST https://castingagen88.herokuapp.com/movies/create
     ],
     "success": true
 }
-
-
 
 Error Type
 
