@@ -6,14 +6,12 @@ from flask import Flask
 import datetime
 import json
 
-# database_name = 'casting_agency'
-#database_path = os.getenv('DATABASE_URL')
-database_path = 'postgresql://postgres@localhost:5432/casting_agency'
+DATABASE_URL = os.getenv('DATABASE_URL')
 
 db = SQLAlchemy()
 
 
-def setup_db(app, database_path=database_path):
+def setup_db(app, database_path=DATABASE_URL):
     app.config['SQLALCHEMY_DATABASE_URI'] = database_path
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     db.app = app

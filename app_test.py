@@ -1,4 +1,4 @@
-import os
+import os 
 import unittest
 import json
 from flask_sqlalchemy import SQLAlchemy
@@ -6,9 +6,9 @@ from app import create_app
 from models import setup_db, Actors, Movies
 
 ASISTANT = "Bearer {}".format(os.environ.get('ASISTANT'))
-DIRECTOR = "Bearer {}".format(os.environ.get('DIRECTOR'))
 EXECUTIVE = "Bearer {}".format(os.environ.get('EXECUTIVE'))
 UNAUTH = os.environ.get('UNAUTH')
+DIRECTOR = "Bearer {}".format(os.environ.get('DIRECTOR'))
 
 
 class CastingAgencyTest(unittest.TestCase):
@@ -121,7 +121,7 @@ class CastingAgencyTest(unittest.TestCase):
 
     def test_404_get_actore(self):
         res = self.client().get('/actor?page=1000000',
-                                headers={'Authorization': ASISTANT}
+                                headers={'Authorization': DIRECTOR}
                                 )
         data = json.loads(res.data)
 
@@ -172,7 +172,7 @@ class CastingAgencyTest(unittest.TestCase):
                            )
         res = self.client().patch('/actores/222222',
                                   json=self.update_actore2,
-                                  headers={'Aithorization': DIRECTOR}
+                                  headers={'Authorization': DIRECTOR}
                                   )
         data = json.loads(res.data)
 
@@ -223,10 +223,10 @@ class CastingAgencyTest(unittest.TestCase):
         self.assertEqual(data['success'], False)
 
     def test_update_movie(self):
-        # self.client().post('movies/create',
-        #                    json=self.movie,
-        #                    headers={'Authorization': EXECUTIVE}
-        #                    )
+        self.client().post('movies/create',
+                           json=self.movie,
+                           headers={'Authorization': EXECUTIVE}
+                           )
         res = self.client().patch('/movies/2',
                                   json=self.update_movie,
                                   headers={'Authorization': EXECUTIVE}
@@ -251,10 +251,7 @@ class CastingAgencyTest(unittest.TestCase):
         self.assertEqual(data['success'], False)
 
     def test_post_movie(self):
-        res = self.client().post('/movies/create',
-                                 json=self.movie,
-                                 headers={'Authorizatin': EXECUTIVE}
-                                 )
+        res = self.client().post('/movies/create', json=self.movie, headers={'Authorization': EXECUTIVE})
         data = json.loads(res.data)
 
         self.assertEqual(res.status_code, 200)
@@ -270,26 +267,26 @@ class CastingAgencyTest(unittest.TestCase):
         self.assertEqual(res.status_code, 404)
         self.assertEqual(data['success'], False)
 
-    # def test_delete_movie(self):
-    #     res = self.client().delete('/movies/1',
-    #                                json=self.delete_movie,
-    #                                headers={'Authorization': DIRECTOR}
-    #                                )
-    #     data = json.loads(res.data)
+    def test_delete_movie(self):
+        res = self.client().delete('/movies/1',
+                                   json=self.delete_movie,
+                                   headers={'Authorization': EXECUTIVE}
+                                   )
+        data = json.loads(res.data)
 
-    #     self.assertEqual(res.status_code, 200)
-    #     self.assertEqual(data['success'], True)
+        self.assertEqual(res.status_code, 200)
+        self.assertEqual(data['success'], True)
 
-    # def test_error_delete_movie(self):
-    #     res = self.client().delete('/movies/1',
-    #                                json=self.delete_movie,
-    #                                headers={'Authorization': DIRECTOR}
-    #                                )
+    def test_error_delete_movie(self):
+        res = self.client().delete('/movies/1',
+                                   json=self.delete_movie,
+                                   headers={'Authorization': EXECUTIVE}
+                                   )
 
-    #     data = json.loads(res.data)
+        data = json.loads(res.data)
 
-    #     self.assertEqual(res.status_code, 422)
-    #     self.assertEqual(data['success'], False)
+        self.assertEqual(res.status_code, 422)
+        self.assertEqual(data['success'], False)
 
     # # -----------------------------------#
     # # ------- Authontication Error-------#
