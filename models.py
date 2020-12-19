@@ -6,13 +6,14 @@ from flask import Flask
 import datetime
 import json
 
-#database_name = 'casting_agency'
-database_path = os.getenv('DATABASE_URL')
-#database_path = 'postgresql://postgres@localhost:5432/casting_agency'
+# database_name = 'casting_agency'
+#database_path = os.getenv('DATABASE_URL')
+database_path = 'postgresql://postgres@localhost:5432/casting_agency'
 
 db = SQLAlchemy()
 
-def setup_db(app, database_path =database_path):
+
+def setup_db(app, database_path=database_path):
     app.config['SQLALCHEMY_DATABASE_URI'] = database_path
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     db.app = app
@@ -24,7 +25,7 @@ def setup_db(app, database_path =database_path):
 class Movies(db.Model):
     __tablename__ = 'Movies'
 
-    id = db.Column(db.Integer , primary_key = True)
+    id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(120))
     relase_date = db.Column(db.DateTime())
 
@@ -54,7 +55,7 @@ class Movies(db.Model):
 class Actors(db.Model):
     __tablename__ = 'Actors'
 
-    id = db.Column(db.Integer , primary_key = True)
+    id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(120))
     age = db.Column(db.String(120))
     gender = db.Column(db.String(120))
@@ -64,7 +65,6 @@ class Actors(db.Model):
     #     self.name = name,
     #     self.age = age,
     #     self.gender = gender
-
 
     def format(self):
         return {
@@ -84,3 +84,4 @@ class Actors(db.Model):
     def delete(self):
         db.session.delete(self)
         db.session.commit()
+        

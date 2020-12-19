@@ -1,3 +1,4 @@
+import os
 import json
 from flask import request, _request_ctx_stack, abort
 from functools import wraps
@@ -5,24 +6,25 @@ from jose import jwt
 from urllib.request import urlopen
 
 
-AUTH0_DOMAIN = 'dev-mirai.us.auth0.com'
+AUTH0_DOMAIN = os.environ.get('AUTH0_DOMAIN')
 ALGORITHMS = ['RS256']
-API_AUDIENCE = 'CastingAgency'
+API_AUDIENCE = os.environ.get('API_AUDIENCE')
+
 
 class AuthError(Exception):
     def __init__(self, error, status_code):
         self.error = error
         self.status_code = status_code
 
-def get_token_auth_header():
 
+def get_token_auth_header():
     auth = request.headers.get('Authorization', None)
 
     if not auth:
         raise AuthError({
            'code': 'authorization_header_missing',
            'description': 'Authorization header is expected'
-    }, 401)
+           }, 401)
 
     parts = auth.split()
     if parts[0].lower() != 'bearer':
@@ -35,16 +37,17 @@ def get_token_auth_header():
         raise AuthError({
            'code': 'invalid_header',
            'description': 'Token not found'
-    }, 401)
+           }, 401)
 
     elif len(parts) > 2:
         raise AuthError({
            'code': ' invaid_header',
            'desription': 'Authorization header must be bearer token.'
-        }, 401)
-    
+           }, 401)
+
     token = parts[1]
     return token
+
 
 def check_permissions(permission, payload):
     if 'permissions' not in payload:
@@ -55,8 +58,9 @@ def check_permissions(permission, payload):
 
     return True
 
+
 def verify_decode_jwt(token):
-    jsonurl =  urlopen(f'https://{AUTH0_DOMAIN}/.well-known/jwks.json')
+    jsonurl = urlopen(f'https://{AUTH0_DOMAIN}/.well-known/jwks.json')
     jwks = json.loads(jsonurl.read())
     unverified_header = jwt.get_unverified_header(token)
 
@@ -86,7 +90,6 @@ def verify_decode_jwt(token):
                 audience=API_AUDIENCE,
                 issuer='https://' + AUTH0_DOMAIN + '/'
             )
-            
             return payload
 
         except jwt.ExpiredSignatureError:
@@ -98,9 +101,10 @@ def verify_decode_jwt(token):
         except jwt.JWTClaimsError:
             raise AuthError({
                 'code': 'invslid_claims',
-                'descriotion': 'Incorrect claimss, Please, check the audience ans issuer.'
-        }, 401)
-        
+                'descriotion': 'Incorrect claimss,' +
+                               'Please, check the audience ans issuer.'
+                }, 401)
+
         except Exception:
             raise AuthError({
                'code': 'invalid_heaser',
@@ -108,9 +112,10 @@ def verify_decode_jwt(token):
             }, 400)
 
     raise AuthError({
-            'code':'invalid_header',
+            'code': 'invalid_header',
             'description': 'Unavle to find the appropriate key.'
-    }, 400)
+            }, 400)
+
 
 def requires_auth(permission=''):
     def requires_auth_decorator(f):
@@ -120,10 +125,5 @@ def requires_auth(permission=''):
             payload = verify_decode_jwt(token)
             check_permissions(permission, payload)
             return f(payload, *args, **kwargs)
-        
         return wrapper
     return requires_auth_decorator
-
-
-
-
