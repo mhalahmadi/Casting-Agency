@@ -49,6 +49,7 @@ class Movies(db.Model):
         db.session.delete(self)
         db.session.commit()
 
+
 # Actors Table
 class Actors(db.Model):
     __tablename__ = 'Actors'
@@ -82,4 +83,3 @@ class Actors(db.Model):
     def delete(self):
         db.session.delete(self)
         db.session.commit()
-        

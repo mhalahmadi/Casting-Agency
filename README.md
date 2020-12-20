@@ -14,9 +14,12 @@ developer using the project should alrady installed Python3 and PIP on thie loca
 Backend:
 please run requirments file for all required pakages need for thre web please run the below
  
-pip install requirments.txt 
+pip3 install requirments.txt 
 
 for run the application in server
+
+On linux : export
+on Windows : set
 
 export FLASK_APP=app
 export FLASK_ENV=development
