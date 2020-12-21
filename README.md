@@ -165,7 +165,7 @@ PATCH/Actor update actor information based on ID
 
 postman `PATCH https://castingagen88.herokuapp.com/actors/1`
 
-**Permissions: **
+**Permissions:**
 
 Casting director - Casting Executive
 
@@ -194,7 +194,7 @@ DELETE/Actor delete actor based on ID
 postman `DELETE https://castingagen88.herokuapp.com/actors/1`
 
 
-**Permissions: **
+**Permissions:**
 
 Casting director - Casting Executive
 
@@ -215,12 +215,12 @@ POST/Actor add new actor in the list
 postman `POST https://castingagen88.herokuapp.com/artors/create`
 
 
-**Permissions: **
+**Permissions:**
 
 Casting director - Casting Executive
 
 
-**Result: **
+**Result:**
 ````
 { "actors": [ {
 
@@ -243,11 +243,13 @@ GET/Movies return all movies
 postman `GET https://castingagen88.herokuapp.com/movies`
 
 
-**Permissions: **
+**Permissions:**
 
 Casting Assistant - Casting Director - Casting Executive
 
-**Result: **
+
+**Result:**
+
 ````
 { 
 "movie": [ { 
@@ -267,6 +269,7 @@ Casting Assistant - Casting Director - Casting Executive
 "total_movie": 1 
 }
 ````
+
 PATCH/Movies update movie information based on ID
 
 
@@ -276,6 +279,7 @@ Postman `PATCH https://castingagen88.herokuapp.com/movies/4`
 **Permissions:**
 
 Casting Executive
+
 
 **Result:**
 
@@ -291,6 +295,7 @@ Casting Executive
 "updated": "4"
 }
 ````
+
 DELETE/Movie Delete movie bassed on ID
 
 
@@ -311,13 +316,13 @@ Casting Executive
 
 POST/Movie add new movie in the list
 
-Postman **POST https://castingagen88.herokuapp.com/movies/create**
+Postman `POST https://castingagen88.herokuapp.com/movies/create`
 
-**Permissions: **
+**Permissions:**
 
 Casting Executive
 
-**Result: **
+**Result:**
 ````
 { "movie": [ {
  "id": 1,
