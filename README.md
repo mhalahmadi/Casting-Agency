@@ -362,14 +362,17 @@ The API will return error as
 
 422:Uunprocessable
 
+
 404: Not Found
 
+
 **Testing:**
+
 
 Restore database by using command
 
 
-move to PostgreSQL file folder cd "C:\ProgramFiles\PostgreSQL\9.6\bin"
+Move to PostgreSQL file folder cd "C:\ProgramFiles\PostgreSQL\9.6\bin"
 
 Enter Command for restore
 
