@@ -141,7 +141,8 @@ Postman `GET https://castingagen88.herokuapp.com/actors`
 **Result:**
 ````
  {
- "actore":[{ 
+ "actore":[
+      { 
 
           "age": "29",
 
@@ -151,7 +152,8 @@ Postman `GET https://castingagen88.herokuapp.com/actors`
  
           "name": "Emma Roberts"
 
-        }], 
+       }
+    ], 
 
     "success": true, 
 
