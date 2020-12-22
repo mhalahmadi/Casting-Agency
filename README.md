@@ -140,8 +140,8 @@ Postman `GET https://castingagen88.herokuapp.com/actors`
 
 **Result:**
 ````
- {
- "actore":[
+{
+ "actor":[
       { 
 
           "age": "29",
@@ -173,21 +173,24 @@ Casting director - Casting Executive
 
 **Result:**
 ```` 
-{ "actor": [ {
+{
+ "actor": [ 
+    {
 
- "age": "30", 
+      "age": "30", 
 
-"gender": "Female", 
+      "gender": "Female", 
 
-"id": 1, "name": "Emma Roberts"
+       "id": 1, "name": "Emma Roberts"
 
- } ], 
-"success": true,
+    } 
+  ], 
+    "success": true,
 
- "total_actor": 1,
+     "total_actor": 1,
 
- "updated": 1
- }
+     "updated": 1
+}
 ````
 
 DELETE/Actor delete actor based on ID
@@ -204,10 +207,11 @@ Casting director - Casting Executive
 **Result:**
 ````
 {
+
  "delete": 1,
 
  "success": true
-
+ 
  }
 ````
 
@@ -224,19 +228,21 @@ Casting director - Casting Executive
 
 **Result:**
 ````
-{ "actors": [ {
+{ 
+  "actors": [ 
+      {
+        "age": "29",
 
- "age": "29",
+        "gender": "Female", 
 
- "gender": "Female", 
+        "id": 1,
+ 
+        "name": "Emma Roberts"
 
-"id": 1,
+       }
+     ],
 
- "name": "Emma Roberts"
-
- } ],
-
- "success": true 
+     "success": true 
 }
 ````
 
@@ -254,9 +260,10 @@ Casting Assistant - Casting Director - Casting Executive
 
 ````
 { 
-"movie": [ { 
+"movie": [ 
+   { 
 
-"id": 2,
+      "id": 2,
 
 "relase_date":
 
