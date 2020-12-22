@@ -265,17 +265,16 @@ Casting Assistant - Casting Director - Casting Executive
 
       "id": 2,
 
-"relase_date":
+      "relase_date":
 
-"Mon, 01 Oct 2012 12:12:12 GMT",
+      "Mon, 01 Oct 2012 12:12:12 GMT",
 
+      "title": "Wild Child" 
+    } 
+  ], 
+   "success": true, 
 
-"title": "Wild Child" 
-} 
-], 
-"success": true, 
-
-"total_movie": 1 
+   "total_movie": 1 
 }
 ````
 
@@ -293,15 +292,22 @@ Casting Executive
 **Result:**
 
 ```` 
-{ "movie":
- [
- { 
-"id": 4,
-"relase_date": "Mon, 01 Oct 2012 12:12:12 GMT",
-"title": "New Wild Child"
- } ],
-"success": true,
-"updated": "4"
+{ 
+"movie": [
+
+    { 
+    
+       "id": 4,
+    
+       "relase_date": "Mon, 01 Oct 2012 12:12:12 GMT",
+     
+       "title": "New Wild Child"
+    } 
+   ],
+     
+    "success": true,
+    
+    "updated": "4"
 }
 ````
 
@@ -316,10 +322,12 @@ Postman `DELETE https://castingagen88.herokuapp.com/movies/1`
 Casting Executive
 
 **Result:** 
-{ 
-"delete": 1,
+{
 
- "success": true 
+   "delete": 1,
+  
+   "success": true 
+   
 }
 ````
 
@@ -333,12 +341,17 @@ Casting Executive
 
 **Result:**
 ````
-{ "movie": [ {
- "id": 1,
- "relase_date": "Mon, 01 Oct 2012 12:12:12 GMT",
- "title": "Wild Child" 
-} ], 
-"success": true 
+{ 
+   "movie": [ 
+      {
+         "id": 1,
+         
+          "relase_date": "Mon, 01 Oct 2012 12:12:12 GMT",
+          
+          "title": "Wild Child" 
+      } 
+    ], 
+     "success": true 
 }
 ````
 
@@ -349,20 +362,20 @@ Return error in JSON as the following format:
 
 ````
 { 
-"error": 422, 
+    "error": 422, 
 
-"message": "unprocessable",
+    "message": "unprocessable",
  
-"success": false
+     "success": false
  }
 ````
 ````
 { 
-"error": 404, 
+    "error": 404, 
 
-"message": "Not Found",
+    "message": "Not Found",
 
- "success": false 
+    "success": false 
 }
 ````
 
