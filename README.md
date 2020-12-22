@@ -1,6 +1,6 @@
 # Introduction:
 
-The web is Casting Agency that will let user to retrive information about Actore and Movie, and some user special have a primmesion to add , update and delate actore and Movie
+Back end web is Casting Agency that will let user to retrieve information about Actor and Movie, and some user special have a permission to add , update and delate actor and Movie
 
 on this project it challenge me that i put all the knowledge that i grant from the course of Full Stack Developer by udacity I found out that I get good experience with the course , I practice alot and that why i can make a backend programs eaiser then before
 
